@@ -92,15 +92,15 @@ The line containing RE is matched, as well as all lines indented beneath it."
 
 (defconst haml-font-lock-keywords
   `((,(haml-nested-regexp "\\(?:-#\\|/\\).*")  0 font-lock-comment-face)
-    (,(haml-nested-regexp ":\\w+") 0 font-lock-string-face)
-    (haml-highlight-ruby-filter-block     1 font-lock-preprocessor-face)
-    (haml-highlight-css-filter-block      1 font-lock-preprocessor-face)
-    (haml-highlight-textile-filter-block  1 font-lock-preprocessor-face)
-    (haml-highlight-markdown-filter-block 1 font-lock-preprocessor-face)
-    (haml-highlight-js-filter-block       1 font-lock-preprocessor-face)
-    (haml-highlight-interpolation         1 font-lock-variable-name-face prepend)
+    ;; (,(haml-nested-regexp ":\\w+") 0 font-lock-string-face)
+    ;; (haml-highlight-ruby-filter-block     1 font-lock-preprocessor-face)
+    ;; (haml-highlight-css-filter-block      1 font-lock-preprocessor-face)
+    ;; (haml-highlight-textile-filter-block  1 font-lock-preprocessor-face)
+    ;; (haml-highlight-markdown-filter-block 1 font-lock-preprocessor-face)
+    ;; (haml-highlight-js-filter-block       1 font-lock-preprocessor-face)
+    ;; (haml-highlight-interpolation         1 font-lock-variable-name-face prepend)
     (haml-highlight-ruby-tag              1 font-lock-preprocessor-face)
-    (haml-highlight-ruby-script           1 font-lock-preprocessor-face)
+    ;; (haml-highlight-ruby-script           1 font-lock-preprocessor-face)
     ("^!!!.*"                             0 font-lock-constant-face)
     ("\\s| *$"                            0 font-lock-string-face)))
 
