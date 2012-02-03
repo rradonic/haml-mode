@@ -23,15 +23,6 @@
 ;;; Code:
 
 (eval-when-compile (require 'cl))
-(require 'ruby-mode)
-
-;; Additional (optional) libraries for fontification
-(require 'css-mode nil t)
-(require 'textile-mode nil t)
-(require 'markdown-mode nil t)
-(require 'javascript-mode "javascript" t)
-(require 'js nil t)
-
 
 ;; User definable variables
 
@@ -92,15 +83,7 @@ The line containing RE is matched, as well as all lines indented beneath it."
 
 (defconst haml-font-lock-keywords
   `((,(haml-nested-regexp "\\(?:-#\\|/\\).*")  0 font-lock-comment-face)
-    ;; (,(haml-nested-regexp ":\\w+") 0 font-lock-string-face)
-    ;; (haml-highlight-ruby-filter-block     1 font-lock-preprocessor-face)
-    ;; (haml-highlight-css-filter-block      1 font-lock-preprocessor-face)
-    ;; (haml-highlight-textile-filter-block  1 font-lock-preprocessor-face)
-    ;; (haml-highlight-markdown-filter-block 1 font-lock-preprocessor-face)
-    ;; (haml-highlight-js-filter-block       1 font-lock-preprocessor-face)
-    ;; (haml-highlight-interpolation         1 font-lock-variable-name-face prepend)
     (haml-highlight-ruby-tag              1 font-lock-preprocessor-face)
-    ;; (haml-highlight-ruby-script           1 font-lock-preprocessor-face)
     ("^!!!.*"                             0 font-lock-constant-face)
     ("\\s| *$"                            0 font-lock-string-face)))
 
@@ -128,9 +111,10 @@ and `font-lock-syntactic-keywords', respectively."
 
 (defun haml-fontify-region-as-ruby (beg end)
   "Use Ruby's font-lock variables to fontify the region between BEG and END."
-  (haml-fontify-region beg end ruby-font-lock-keywords
-                       ruby-font-lock-syntax-table
-                       ruby-font-lock-syntactic-keywords))
+  ;; (haml-fontify-region beg end ruby-font-lock-keywords
+  ;;                      ruby-font-lock-syntax-table
+  ;;                      ruby-font-lock-syntactic-keywords)
+  )
 
 (defun haml-handle-filter (filter-name limit fn)
   "If a FILTER-NAME filter is found within LIMIT, run FN on that filter.
