@@ -206,9 +206,9 @@ For example, this will highlight all of the following:
     (while (haml-move "\\([.#%]\\)[a-z0-9_:\\-]*")
       (put-text-property (match-beginning 0) (match-end 0) 'face
                          (case (char-after (match-beginning 1))
-                           (?% font-lock-function-name-face)
+                           (?% font-lock-keyword-face)
                            (?# font-lock-keyword-face)
-                           (?. font-lock-type-face))))
+                           (?. font-lock-keyword-face))))
 
     (block loop
       (while t
